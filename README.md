@@ -1,5 +1,7 @@
 # Cohort / Payback / Loss-Curve Dashboard
 
+View it at: https://cohort-payback-loss-curve.streamlit.app/
+
 A live cohort retention, CAC payback, LTV:CAC, and GRR/NRR dashboard for a subscription
 business, built on a synthetic fintech personal-finance-management (PFM) dataset and a
 reusable calculation engine. Point the engine at a real `customers.csv` /
@@ -194,7 +196,7 @@ Mechanics:
 
 Reproducible via a fixed seed (`SEED = 42` in `data_gen/generate.py`).
 
-## Assumptions & limitations (be upfront about these)
+## Assumptions & limitations
 
 - **75% gross margin** is a placeholder for a fintech PFM SaaS business — swap it via
   the sidebar slider (demo) or `DEFAULT_GROSS_MARGIN` in `engine/metrics.py` (real
@@ -209,9 +211,3 @@ Reproducible via a fixed seed (`SEED = 42` in `data_gen/generate.py`).
   "show more of the curve" against "don't show a noisy 2-customer average." Tune
   `MIN_COHORT_COVERAGE` in `engine/metrics.py` if a specific audience wants a different
   bar.
-
-## Deployment
-
-Deployed via [Streamlit Community Cloud](https://streamlit.io/cloud) (free tier): push
-this repo to GitHub, connect it at share.streamlit.io, point it at `app.py`. No secrets
-or external services required — the demo dataset ships in `data/`.
